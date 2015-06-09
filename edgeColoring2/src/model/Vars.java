@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -36,6 +37,14 @@ public class Vars {
     			max = deg;
     	}
     	return max;
+    }
+    
+    public static LinkedList<Integer> getAdjacentEdgesIndex(int edgeIndex) {
+    	LinkedList<Integer> result = new LinkedList<Integer>();
+    	LinkedList<Edge> adjacent = edges.get(edgeIndex).getNeighbourEdges();
+    	for (Edge e : adjacent)
+    		result.add(edges.indexOf(e));
+    	return result;
     }
     
 }

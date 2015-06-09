@@ -8,13 +8,10 @@ import java.awt.Point;
 import java.util.LinkedList;
 
 public class Edge {
-
-
-
 	private Node n1;
     private Node n2;
     private Color color;
-
+    
     public Edge(Node n1, Node n2, Color color) {
         this.n1 = n1;
         this.n2 = n2;
