@@ -1,5 +1,7 @@
 package genetics;
 
-public class GeneticAlgorithm {
+import java.util.List;
 
+public abstract class GeneticAlgorithm {
+	public abstract List<Integer> run();
 }

@@ -7,6 +7,7 @@ import java.util.Random;
 import model.Vars;
 
 public class GreedyAlgorithm {
+	
 	public static List<Integer> run() {
 		Integer numberOfEdges = Vars.edges.size();
 		if (numberOfEdges <= 0)
