@@ -26,4 +26,16 @@ public class Vars {
     public static MainFrame mainFrame;
     public static Color color=Color.BLACK;
     public static ArrayList<Color> colors=new ArrayList<Color>();
+    
+    public static int getMaximumNodeDegree() {
+    	int max = -1;
+    	int deg = -1;
+    	for (Node n : nodes) {
+    		deg = n.getDegree();
+    		if (deg > max)
+    			max = deg;
+    	}
+    	return max;
+    }
+    
 }
