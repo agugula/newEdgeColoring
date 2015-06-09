@@ -1,0 +1,7 @@
+- Funkcja, która na podstawie listy intów przyporz¹dkuje kolorki swingowe (praktycznie dowolne), 
+tak ¿eby krawêdzi o tej samej wartoœci parametru mia³y ten sam kolor w reprezentacji graficznej, 
+lista bêdzie zawieraæ nieujemne wartoœci, ujemne s¹ b³êdne. Kolejne wartoœci w liœcie bêd¹ 
+odpowiadaæ kolejnym krawêdziom (edge[i] powinno mieæ kolor colors[i])
+- Jakiœ guzik "Run", w sumie to nawet dwa, jeden dla algorytmu zach³annego, drugi dla genetycznego
+(ew. jeden guzik + mo¿liwoœæ zaznaczenia wyboru algorytmu z dwóch powy¿szych)
+- Suwaczek z mo¿liwoœci¹ rêcznego wpisania liczby do ustalenia liczby osobników w populacji
