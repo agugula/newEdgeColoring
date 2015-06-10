@@ -1,10 +1,10 @@
 package control;
 
 import genetics.GeneticAlgorithm;
-import genetics.Population;
-import genetics.PopulationSelector;
+import genetics.RandomSelector;
 
 import java.awt.event.ActionEvent;
+import java.util.LinkedList;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -20,7 +20,10 @@ public class runGeneticAction extends AbstractAction implements Action {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		GeneticAlgorithm.run();
+		GeneticAlgorithm gen = new GeneticAlgorithm(new RandomSelector());
+		LinkedList<Integer> colors = gen.run();
+		Vars.parseColors(colors);
+		System.out.println(colors);
 	}
 
 }
