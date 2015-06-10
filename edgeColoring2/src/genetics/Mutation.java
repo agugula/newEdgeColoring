@@ -6,7 +6,7 @@ import java.util.Random;
 public class Mutation {
 	public static Chromosome mutate(Chromosome ch) {
 		LinkedList<Integer> badEdges = Fitness.calculateBadEdges(ch);
-		if (badEdges.size() < 0)
+		if (badEdges.size() <= 0)
 			return ch;
 		Random r = new Random();
 		int id1 = r.nextInt(badEdges.size());
