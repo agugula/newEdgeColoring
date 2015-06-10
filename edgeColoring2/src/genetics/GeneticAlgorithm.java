@@ -1,7 +1,9 @@
 package genetics;
 
-import java.util.List;
+import java.util.LinkedList;
 
-public abstract class GeneticAlgorithm {
-	public abstract List<Integer> run();
+public class GeneticAlgorithm {
+	public static LinkedList<Integer> run() {
+		return null;
+	}
 }
