@@ -39,7 +39,7 @@ public class Chromosome implements Comparable<Chromosome> {
 	}
 	
 	public String toString() {
-		return genotype.toString();
+		return genotype.toString() + " fitness: " + fitness;
 	}
 	
 	public int getLength() {
@@ -99,19 +99,6 @@ public class Chromosome implements Comparable<Chromosome> {
 	
 	public static Chromosome addChromosome(Chromosome ch1, Chromosome ch2) {
 		return ch1.addChromosome(ch2);
-	}
-	
-	public static void main(String [] args) {
-		Chromosome c1 = new Chromosome();
-		c1.generateRandomChromosome(10);
-		Chromosome c2 = new Chromosome();
-		c2.generateRandomChromosome(10);
-		Chromosome r = RandomCrossover.crossover(c1, c2);
-		System.out.println(c1);
-		System.out.println(c2);
-		System.out.println(r);
-		r.swapGenes(7, 8);
-		System.out.println(r);
 	}
 
 	@Override
