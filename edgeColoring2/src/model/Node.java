@@ -142,17 +142,17 @@ public class Node {
         }
     }
 
-    /**
-     * Update each node's radius r.
-     */
-    public static void updateRadius(List<Node> list, int r) {
-        for (Node n : list) {
-            if (n.isSelected()) {
-                n.r = r;
-                n.setBoundary(n.b);
-            }
-        }
-    }
+//    /**
+//     * Update each node's radius r.
+//     */
+//    public static void updateRadius(List<Node> list, int r) {
+//        for (Node n : list) {
+//            if (n.isSelected()) {
+//                n.r = r;
+//                n.setBoundary(n.b);
+//            }
+//        }
+//    }
 
     /**
      * Update each node's color.
@@ -187,6 +187,38 @@ public class Node {
     
     public int getDegree(){ //stopien wierzcholka
     	return edges.size();
+    }
+    
+    public static void addExactAmountOfNodes(int amount){
+        
+    	Integer nodesQuantity=amount;
+        Integer centerX=Vars.mainFrame.getWidth()/2; //test
+        Integer centerY=Vars.mainFrame.getHeight()/2;//test
+        System.out.println(centerX+"     "+centerY);
+        Double graphRadius= (double) ((centerX>centerY) ? (centerY - 50) : (centerX - 50)); 
+        
+        Double posX,posY;
+    	Double base=Math.PI/((double)nodesQuantity/2);
+        
+    	for (int i = 0; i < nodesQuantity; i++) { 
+            posX=centerX+Math.cos(base*i)*graphRadius;
+            posY=centerY+Math.sin(base*i)*graphRadius;
+            //pokazuje umiejscowienie kazdego wierzcholka
+            //System.out.println("node "+i+" \nposX: "+posX+"\nposY: "+posY);
+    		
+    		Point p = new Point(posX.intValue(), posY.intValue());
+            Vars.nodes.add(new Node(p, Vars.radius));
+        }
+    }
+    
+    public String toString(){
+    	String result="";
+    	for (Edge e:edges){
+    		Node n=(e.getN1()==this) ? e.getN1() : e.getN2();
+    		result+=Vars.nodes.indexOf(e)+" ";
+    	}
+    	result=result.substring(0,result.length()-1);
+    	return result;
     }
     
 }

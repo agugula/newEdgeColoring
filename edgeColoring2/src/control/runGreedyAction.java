@@ -19,10 +19,12 @@ public class runGreedyAction extends AbstractAction implements Action {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		LinkedList<Integer> re = SequentialGreedyAlgorithm.run();
-		System.out.println(re);
-		Vars.parseColors(re);
-		Vars.mainFrame.repaint();
+		if (Vars.edges.size()>1){
+			LinkedList<Integer> re = SequentialGreedyAlgorithm.run();
+			System.out.println(re);
+			Vars.parseColors(re);
+			Vars.mainFrame.repaint();
+		}
 	}
 
 }

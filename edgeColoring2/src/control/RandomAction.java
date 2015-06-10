@@ -22,25 +22,8 @@ public class RandomAction extends AbstractAction {
         Vars.edges.clear();
         Vars.mainFrame.repaint();
     
-    	Integer nodesQuantity=Vars.randomCounter;
-        Integer centerX=Vars.mainFrame.getWidth()/2; //test
-        Integer centerY=Vars.mainFrame.getHeight()/2;//test
-        System.out.println(centerX+"     "+centerY);
-        Double graphRadius= (double) ((centerX>centerY) ? (centerY - 50) : (centerX - 50)); 
-        
-        Double posX,posY;
-    	Double base=Math.PI/((double)nodesQuantity/2);
-        
-    	for (int i = 0; i < nodesQuantity; i++) { 
-            posX=centerX+Math.cos(base*i)*graphRadius;
-            posY=centerY+Math.sin(base*i)*graphRadius;
-            //pokazuje umiejscowienie kazdego wierzcholka
-            //System.out.println("node "+i+" \nposX: "+posX+"\nposY: "+posY);
-    		
-    		Point p = new Point(posX.intValue(), posY.intValue());
-            Vars.nodes.add(new Node(p, Vars.radius));
-        }
-    	generateRandomEdges();
+        Node.addExactAmountOfNodes(Vars.randomCounter);
+        generateRandomEdges();
         Vars.mainFrame.repaint();
     }
     
@@ -54,10 +37,16 @@ public class RandomAction extends AbstractAction {
     	        Vars.edges.add(newEdge);
     	        n1.addEdge(newEdge);
     	        n2.addEdge(newEdge);
-    	        System.out.println(n1.getEdges());
+    	        //System.out.println(n1.getEdges());
     	    }
     	}
     }
+    
+    
+    
+    
+//    
+//    public static Node 
     
 //    Node n1 = Vars.selected.get(i);
 //    Node n2 = Vars.selected.get(i + 1);
