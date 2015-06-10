@@ -1,9 +1,13 @@
 package control;
 
+import genetics.Chromosome;
+
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+
+import model.Vars;
 
 public class runGeneticAction extends AbstractAction implements Action {
 
@@ -14,8 +18,12 @@ public class runGeneticAction extends AbstractAction implements Action {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-
+		if (Vars.edges.size()>1){
+			Chromosome ch = new Chromosome();
+			ch.generateRandomChromosome(Vars.getMaximumNodeDegree() + 1);
+			System.out.println(ch);
+			System.out.println(ch.calculateFitness());
+		}
 	}
 
 }
