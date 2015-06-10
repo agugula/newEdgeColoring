@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -30,6 +31,9 @@ public class MainFrame extends JComponent {
                 f.getRootPane().setDefaultButton(Vars.control.getDefaultButton());
                 f.pack();
                 f.setLocationByPlatform(true);
+                
+                //test
+               // f.setExtendedState(JFrame.MAXIMIZED_BOTH); //otwiera w fullscreen TODO: odkomentowac przy oddawaniu, teraz bedzie tylko denerwowac
                 f.setVisible(true);
             }
         });
@@ -44,7 +48,7 @@ public class MainFrame extends JComponent {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(Vars.WIDE, Vars.HIGH);
+    	return new Dimension(Vars.WIDE, Vars.HIGH);
     }
 
     @Override

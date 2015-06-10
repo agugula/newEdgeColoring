@@ -5,6 +5,7 @@
 odpaleniu algorytmu czêsto wychodz¹ kolory na tyle podobne, ¿e siê tego rozró¿niæ nie da - nie wiem
 czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (na razie jest zach³anny)
 (to akurat nizebyt wysoki priorytet)
+//DONE
 //dodana funckja Vars.parseIntToColor z 10 stalymi kolorami + random je¿eli wiêcej
 
 
@@ -12,8 +13,8 @@ czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (
 (z dok³adnoœci¹ do milisekund) jakoœ na tym górnym panelu na przyk³ad
 
 - Zwiêkszenie limitu wierzcho³ków, mo¿e byæ kosztem zmniejszenia ich rozmiarów na grafie
-// ustwilem promien Node'a chyba na minimum
+// DONE
 
 - Mo¿na dorzuciæ wstawianie randomowych krawêdzi, bêdzie ³atwiej i szybciej mo¿na testowaæ, przy 
 prezentacji projektu te¿ siê przyda
-//odbêdzie sie
+// DONE
