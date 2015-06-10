@@ -6,6 +6,10 @@ czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (
 (to akurat nizebyt wysoki priorytet)
 
 - Przyda³oby siê jakiœ stoper, który wyœwietla czas od klikniêcia przycisku do zakoñczenia algorytmu
-(z dok³adnoœci¹ do milisekund) jakoœ na tym górnym panelu na przyk³ad
+(z dok³adnoœci¹ do milisekund) jakoœ na tym górnym panelu na przyk³ad (to siê mo¿e przy prezentacji bardzo
+przydaæ, mo¿e byæ nawet coœ takiego: http://stackoverflow.com/questions/8255738/is-there-a-stopwatch-in-java )
 
-- Zwiêkszenie limitu wierzcho³ków, mo¿e byæ kosztem zmniejszenia ich rozmiarów na grafie
+- Zwiêkszenie limitu wierzcho³ków
+
+- Mo¿na dorzuciæ wstawianie randomowych krawêdzi, bêdzie ³atwiej i szybciej mo¿na testowaæ, przy 
+prezentacji projektu te¿ siê przyda
