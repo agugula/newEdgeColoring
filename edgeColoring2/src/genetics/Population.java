@@ -9,8 +9,27 @@ public class Population {
 	private LinkedList<Chromosome> population;
 	
 	public Population() {
-		size = Vars.edges.size();
+		size = 0;
+		population = null;
+	}
+	
+	public Population(int size) {
+		this.size = size;
 		generateRandomPopulation();
+	}
+	
+	public Population(LinkedList<Chromosome> list) {
+		setPopulation(list);
+	}
+	
+	public Population(Population p) {
+		size = p.getSize();
+		setPopulation(p.getPopulationList());
+	}
+	
+	public void addChromosome(Chromosome ch) {
+		size++;
+		population.add(ch);
 	}
 	
 	public void generateRandomPopulation() {
@@ -21,9 +40,19 @@ public class Population {
 		}
 	}
 	
+	public void setPopulation(LinkedList<Chromosome> p) {
+		size = p.size();
+		population = new LinkedList<Chromosome>();
+		population.addAll(p);
+	}
+	
 	public void calculateFintess() {
 		for (Chromosome ch : population)
 			ch.calculateFitness();
+	}
+	
+	public Chromosome getChromosome(Integer index) {
+		return population.get(index);
 	}
 	
 	public String toString() {
@@ -33,6 +62,20 @@ public class Population {
 			result += i + ") " + ch + " " + ch.getFitness() + "\n"; 
 		}
 		return result;
+	}
+	
+	public void removeChromosome(Integer id) {
+		population.remove(id);
+	}
+	
+	public Object clone() {
+		Population copy = new Population();
+		copy.setPopulation(population);
+		return copy;
+	}
+	
+	public int getSize() {
+		return size;
 	}
 	
 	public LinkedList<Chromosome> getPopulationList() {
