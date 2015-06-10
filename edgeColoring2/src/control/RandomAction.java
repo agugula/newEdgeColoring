@@ -25,7 +25,8 @@ public class RandomAction extends AbstractAction {
     	Integer nodesQuantity=Vars.randomCounter;
         Integer centerX=Vars.mainFrame.getWidth()/2; //test
         Integer centerY=Vars.mainFrame.getHeight()/2;//test
-        Double graphRadius= (double) ((centerX>centerY) ? (Vars.HIGH/2 - 50) : (Vars.WIDE/2 - 50)); 
+        System.out.println(centerX+"     "+centerY);
+        Double graphRadius= (double) ((centerX>centerY) ? (centerY - 50) : (centerX - 50)); 
         
         Double posX,posY;
     	Double base=Math.PI/((double)nodesQuantity/2);
