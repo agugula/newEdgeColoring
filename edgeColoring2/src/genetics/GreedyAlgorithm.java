@@ -22,14 +22,15 @@ public class GreedyAlgorithm {
 		for (int i = 0; i < numberOfEdges; i++) {
 			LinkedList<Integer> usedColors = new LinkedList<Integer>();
 			int index = randomizer.nextInt(unused.size());
+			int id = unused.get(index);
 			unused.remove(index);
-			for (Integer e : Vars.getAdjacentEdgesIndex(index))
+			for (Integer e : Vars.getAdjacentEdgesIndex(id))
 				if (result.get(e) != -1)
 					usedColors.add(result.get(e));
 			int k = 0;
 			while (usedColors.contains(k))
 				k++;
-			result.set(index, k);
+			result.set(id, k);
 		}
 		return result;
 	}
