@@ -23,6 +23,7 @@ public class runGeneticAction extends AbstractAction implements Action {
 			ch.generateRandomChromosome(Vars.getMaximumNodeDegree() + 1);
 			System.out.println(ch);
 			System.out.println(ch.calculateFitness());
+			Vars.mainFrame.repaint();
 		}
 	}
 

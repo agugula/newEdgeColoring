@@ -14,6 +14,7 @@ import control.ClearAction;
 import control.ConnectAction;
 import control.DeleteAction;
 import control.RandomAction;
+import control.populationCounterAction;
 import control.randomCounterAction;
 import control.runGeneticAction;
 import control.runGreedyAction;
@@ -31,6 +32,7 @@ public class ControlPanel extends JToolBar {
     private Action runGenetic = new runGeneticAction("Run Genetic");
     private Action runGreedy= new runGreedyAction("Run Greedy");
     private JSpinner randomCounter = new randomCounterAction();
+    private JSpinner populationCounter= new populationCounterAction();
     
 
     public ControlPanel() {
@@ -43,10 +45,12 @@ public class ControlPanel extends JToolBar {
         this.add(new JButton(random));
         this.add(new JButton(runGenetic));
         this.add(new JButton(runGreedy));
-
+        this.add(populationCounter);
+        
         popup.add(new JMenuItem(newNode));
         popup.add(new JMenuItem(connect));
         popup.add(new JMenuItem(delete));
+        
     }
 
 	public Action getNewNode() {

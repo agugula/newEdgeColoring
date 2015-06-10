@@ -41,7 +41,7 @@ public class Vars {
     public static final Random rnd = new Random();
     
     //algorithm
-    public static int population=100; 		//ustaw jak¹œ domyslna nie wiem ile to ma byc
+    public static Integer population; 		//ustaw jak¹œ domyslna nie wiem ile to ma byc
     
     
     //zwraca maksymalny wierzcholek w grafie
