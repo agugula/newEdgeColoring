@@ -28,6 +28,8 @@ public class Population {
 	}
 	
 	public void addChromosome(Chromosome ch) {
+		if (population == null)
+			population = new LinkedList<Chromosome>();
 		size++;
 		population.add(ch);
 	}
@@ -37,6 +39,7 @@ public class Population {
 		for (int i = 0; i < size; i++) {
 			population.add(new Chromosome());
 			population.get(i).generateRandomChromosome(Vars.getMaximumNodeDegree() + 1);
+			population.get(i).calculateFitness();
 		}
 	}
 	
