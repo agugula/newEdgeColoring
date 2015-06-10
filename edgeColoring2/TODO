@@ -4,3 +4,8 @@
 odpaleniu algorytmu czêsto wychodz¹ kolory na tyle podobne, ¿e siê tego rozró¿niæ nie da - nie wiem
 czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (na razie jest zach³anny)
 (to akurat nizebyt wysoki priorytet)
+
+- Przyda³oby siê jakiœ stoper, który wyœwietla czas od klikniêcia przycisku do zakoñczenia algorytmu
+(z dok³adnoœci¹ do milisekund) jakoœ na tym górnym panelu na przyk³ad
+
+- Zwiêkszenie limitu wierzcho³ków, mo¿e byæ kosztem zmniejszenia ich rozmiarów na grafie
