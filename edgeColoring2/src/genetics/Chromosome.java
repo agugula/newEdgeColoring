@@ -86,10 +86,6 @@ public class Chromosome {
 		return res;
 	}
 	
-	public void minimalizeColors() {
-		
-	}
-	
 	public Chromosome addChromosome(Chromosome ch) {
 		this.genotype.addAll(ch.getGenotype());
 		return this;
