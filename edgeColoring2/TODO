@@ -1,25 +1,25 @@
-- Suwaczek z mo¿liwoœci¹ rêcznego wpisania liczby do ustalenia liczby osobników w populacji
+- Suwaczek z moÅ¼liwoÅ›ciÄ… rÄ™cznego wpisania liczby do ustalenia liczby osobnikÃ³w w populacji
 //jest. ile max bysmy chcieli?
-/// no tego w³aœnie nie ma, jest liczba okreœlaj¹ca iloœæ wierzcho³ków, populacja to co innego (czêœæ 
-/// algorytmu genetycznego), do tego jest potrzebne drugie takie coœ, zakres myœlê, ¿e do 300 mo¿e byæ
-/// chocia¿ nie wiem ile siê tego u¿ywa w takich normalnych algo gen
+/// no tego wÅ‚aÅ›nie nie ma, jest liczba okreÅ›lajÄ…ca iloÅ›Ä‡ wierzchoÅ‚kÃ³w, populacja to co innego (czÄ™Å›Ä‡ 
+/// algorytmu genetycznego), do tego jest potrzebne drugie takie coÅ›, zakres myÅ›lÄ™, Å¼e do 300 moÅ¼e byÄ‡
+/// chociaÅ¼ nie wiem ile siÄ™ tego uÅ¼ywa w takich normalnych algo gen
 
-- Przyda³o by siê zmieniæ sposób wyboru kolorów, np. ustaliæ jak¹œ grupê, bo po 
-odpaleniu algorytmu czêsto wychodz¹ kolory na tyle podobne, ¿e siê tego rozró¿niæ nie da - nie wiem
-czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (na razie jest zach³anny)
+- PrzydaÅ‚o by siÄ™ zmieniÄ‡ sposÃ³b wyboru kolorÃ³w, np. ustaliÄ‡ jakÄ…Å› grupÄ™, bo po 
+odpaleniu algorytmu czÄ™sto wychodzÄ… kolory na tyle podobne, Å¼e siÄ™ tego rozrÃ³Å¼niÄ‡ nie da - nie wiem
+czy algorytm Åºle dziaÅ‚a, czy te kolory sÄ… tak podobne, Å¼e siÄ™ nie da rozrÃ³Å¼niÄ‡ (na razie jest zachÅ‚anny)
 (to akurat nizebyt wysoki priorytet)
-//dodana funckja Vars.parseIntToColor z 10 stalymi kolorami + random je¿eli wiêcej
+//dodana funckja Vars.parseIntToColor z 10 stalymi kolorami + random jeÅ¼eli wiÄ™cej
 
 
-- Przyda³oby siê jakiœ stoper, który wyœwietla czas od klikniêcia przycisku do zakoñczenia algorytmu
-(z dok³adnoœci¹ do milisekund) jakoœ na tym górnym panelu na przyk³ad
+- PrzydaÅ‚oby siÄ™ jakiÅ› stoper, ktÃ³ry wyÅ›wietla czas od klikniÄ™cia przycisku do zakoÅ„czenia algorytmu
+(z dokÅ‚adnoÅ›ciÄ… do milisekund) jakoÅ› na tym gÃ³rnym panelu na przykÅ‚ad
 
-- Zwiêkszenie limitu wierzcho³ków, mo¿e byæ kosztem zmniejszenia ich rozmiarów na grafie
+- ZwiÄ™kszenie limitu wierzchoÅ‚kÃ³w, moÅ¼e byÄ‡ kosztem zmniejszenia ich rozmiarÃ³w na grafie
 // ustwilem promien Node'a chyba na minimum
 /// DONE
 
-- Mo¿na dorzuciæ wstawianie randomowych krawêdzi, bêdzie ³atwiej i szybciej mo¿na testowaæ, przy 
-prezentacji projektu te¿ siê przyda
+- MoÅ¼na dorzuciÄ‡ wstawianie randomowych krawÄ™dzi, bÄ™dzie Å‚atwiej i szybciej moÅ¼na testowaÄ‡, przy 
+prezentacji projektu teÅ¼ siÄ™ przyda
 //DONE
 
-- Przyda³by siê jakiœ napis ile ten graf ma krawêdzi
+- PrzydaÅ‚by siÄ™ jakiÅ› napis ile ten graf ma krawÄ™dzi
