@@ -1,4 +1,4 @@
-package control;
+package view;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -10,6 +10,13 @@ import javax.swing.JPopupMenu;
 import javax.swing.JSpinner;
 import javax.swing.JToolBar;
 
+import control.ClearAction;
+import control.ConnectAction;
+import control.DeleteAction;
+import control.RandomAction;
+import control.randomCounterAction;
+import control.runGeneticAction;
+import control.runGreedyAction;
 import model.NewNodeAction;
 
 public class ControlPanel extends JToolBar {

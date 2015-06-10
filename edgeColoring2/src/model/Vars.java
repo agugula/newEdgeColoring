@@ -9,8 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import view.ControlPanel;
 import view.MainFrame;
-import control.ControlPanel;
 
 public class Vars {
 	
@@ -39,6 +39,9 @@ public class Vars {
     
     //utils
     public static final Random rnd = new Random();
+    
+    //algorithm
+    public static int population=100; 		//ustaw jak¹œ domyslna nie wiem ile to ma byc
     
     
     //zwraca maksymalny wierzcholek w grafie
@@ -107,6 +110,7 @@ public class Vars {
 		}
 	}
     
+    //zwraca maksymalna ilosc krawedzi ktore moga wystapic dla grafu o zadanej ilosci wierzcholkow
     public static int getMaxQuantityOfEdges(){
     	int result;
     	int nodesQ=nodes.size();
@@ -116,6 +120,7 @@ public class Vars {
     	return result;
     }
     
+    //oblicza wartosc dwumianu newtona
     public static int newton( int n, int k ){ //max ilosc krawedzi w grafie to (n po 2) gdzie n to ilosc wierzcholkow
 	    int  result = 1;       
 	    int i;
