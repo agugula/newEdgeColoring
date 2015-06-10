@@ -22,6 +22,7 @@ public class runGreedyAction extends AbstractAction implements Action {
 		LinkedList<Integer> re = SequentialGreedyAlgorithm.run();
 		System.out.println(re);
 		Vars.parseColors(re);
+		Vars.mainFrame.repaint();
 	}
 
 }
