@@ -13,3 +13,7 @@ czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (
 
 - Zwiêkszenie limitu wierzcho³ków, mo¿e byæ kosztem zmniejszenia ich rozmiarów na grafie
 // ustwilem promien Node'a chyba na minimum
+
+- Mo¿na dorzuciæ wstawianie randomowych krawêdzi, bêdzie ³atwiej i szybciej mo¿na testowaæ, przy 
+prezentacji projektu te¿ siê przyda
+//odbêdzie sie
