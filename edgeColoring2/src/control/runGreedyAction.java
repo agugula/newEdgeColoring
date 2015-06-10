@@ -3,6 +3,7 @@ package control;
 import genetics.GreedyAlgorithm;
 
 import java.awt.event.ActionEvent;
+import java.util.LinkedList;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -18,7 +19,9 @@ public class runGreedyAction extends AbstractAction implements Action {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		Vars.parseColors(GreedyAlgorithm.run());
+		LinkedList<Integer> re = GreedyAlgorithm.run();
+		System.out.println(re);
+		Vars.parseColors(re);
 	}
 
 }
