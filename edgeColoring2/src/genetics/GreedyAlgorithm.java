@@ -8,19 +8,19 @@ import model.Vars;
 
 public class GreedyAlgorithm {
 	
-	public static List<Integer> run() {
+	public static LinkedList<Integer> run() {
 		Integer numberOfEdges = Vars.edges.size();
 		if (numberOfEdges <= 0)
 			return null;
-		List<Integer> result = new LinkedList<Integer>();
-		List<Integer> unused = new LinkedList<Integer>();
+		LinkedList<Integer> result = new LinkedList<Integer>();
+		LinkedList<Integer> unused = new LinkedList<Integer>();
 		for (int i = 0; i < numberOfEdges; i++) {
 			result.add(-1);
 			unused.add(i);
 		}
 		Random randomizer = new Random();
 		for (int i = 0; i < numberOfEdges; i++) {
-			List<Integer> usedColors = new LinkedList<Integer>();
+			LinkedList<Integer> usedColors = new LinkedList<Integer>();
 			int index = randomizer.nextInt(unused.size());
 			unused.remove(index);
 			for (Integer e : Vars.getAdjacentEdgesIndex(index))
