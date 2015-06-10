@@ -1,5 +1,8 @@
 - Suwaczek z mo¿liwoœci¹ rêcznego wpisania liczby do ustalenia liczby osobników w populacji
 //jest. ile max bysmy chcieli?
+/// no tego w³aœnie nie ma, jest liczba okreœlaj¹ca iloœæ wierzcho³ków, populacja to co innego (czêœæ 
+/// algorytmu genetycznego), do tego jest potrzebne drugie takie coœ, zakres myœlê, ¿e do 300 mo¿e byæ
+/// chocia¿ nie wiem ile siê tego u¿ywa w takich normalnych algo gen
 
 - Przyda³o by siê zmieniæ sposób wyboru kolorów, np. ustaliæ jak¹œ grupê, bo po 
 odpaleniu algorytmu czêsto wychodz¹ kolory na tyle podobne, ¿e siê tego rozró¿niæ nie da - nie wiem
@@ -13,6 +16,7 @@ czy algorytm Ÿle dzia³a, czy te kolory s¹ tak podobne, ¿e siê nie da rozró¿niæ (
 
 - Zwiêkszenie limitu wierzcho³ków, mo¿e byæ kosztem zmniejszenia ich rozmiarów na grafie
 // ustwilem promien Node'a chyba na minimum
+/// 
 
 - Mo¿na dorzuciæ wstawianie randomowych krawêdzi, bêdzie ³atwiej i szybciej mo¿na testowaæ, przy 
 prezentacji projektu te¿ siê przyda
