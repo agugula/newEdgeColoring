@@ -1,12 +1,13 @@
 package genetics;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 import model.Vars;
 
-public class Chromosome {
+public class Chromosome implements Comparable<Chromosome> {
 	private LinkedList<Integer> genotype;
 	private int length = 0;
 	private int fitness = -1;
@@ -14,6 +15,10 @@ public class Chromosome {
 	public Chromosome() {
 		length = Vars.edges.size();
 		genotype = new LinkedList<>();
+	}
+	
+	public Chromosome(LinkedList<Integer> list) {
+		setGenotype(list);
 	}
 	
 	public boolean setGenotype(List<Integer> gen) {
@@ -56,9 +61,7 @@ public class Chromosome {
 	public void swapGenes(int pos1, int pos2) {
 		if (pos1 < 0 || pos2 < 0 || pos1 >= genotype.size() || pos2 >= genotype.size())
 			return;
-		Integer gene = genotype.get(pos1);
-		genotype.set(pos1, genotype.get(pos2));
-		genotype.set(pos2, gene);
+		Collections.swap(genotype, pos1, pos2);
 	}
 	
 	public LinkedList<Chromosome> split(int place) {
@@ -108,5 +111,10 @@ public class Chromosome {
 		System.out.println(r);
 		r.swapGenes(7, 8);
 		System.out.println(r);
+	}
+
+	@Override
+	public int compareTo(Chromosome o) {
+		return Integer.compare(this.fitness, o.fitness);
 	}
 }
