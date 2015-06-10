@@ -20,6 +20,7 @@ public class Chromosome {
 		length = gen.size();
 		genotype = new LinkedList<Integer>();
 		genotype.addAll(gen);
+		calculateFitness();
 		return true;
 	}
 	
@@ -28,6 +29,7 @@ public class Chromosome {
 		genotype = new LinkedList<>();
 		for (int i = 0; i < length; i++)
 			genotype.add(r.nextInt(colors));
+		calculateFitness();
 	}
 	
 	public String toString() {
