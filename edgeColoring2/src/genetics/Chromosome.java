@@ -19,13 +19,14 @@ public class Chromosome implements Comparable<Chromosome> {
 	
 	public Chromosome(LinkedList<Integer> list) {
 		setGenotype(list);
+		calculateFitness();
 	}
 	
 	public boolean setGenotype(List<Integer> gen) {
 		length = gen.size();
 		genotype = new LinkedList<Integer>();
 		genotype.addAll(gen);
-		calculateFitness();
+		//calculateFitness();
 		return true;
 	}
 	
