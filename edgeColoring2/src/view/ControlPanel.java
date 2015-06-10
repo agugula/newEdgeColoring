@@ -13,12 +13,13 @@ import javax.swing.JToolBar;
 import control.ClearAction;
 import control.ConnectAction;
 import control.DeleteAction;
-import control.RandomAction;
+import control.GenerateAction;
 import control.populationCounterAction;
 import control.randomCounterAction;
 import control.runGeneticAction;
 import control.runGreedyAction;
 import model.NewNodeAction;
+import javax.swing.JLabel;
 
 public class ControlPanel extends JToolBar {
 
@@ -26,13 +27,15 @@ public class ControlPanel extends JToolBar {
     private Action clearAll = new ClearAction("Clear");
     private Action connect = new ConnectAction("Connect");
     private Action delete = new DeleteAction("Delete");
-    private Action random = new RandomAction("Random");
+    private Action random = new GenerateAction("Generate");
     private JButton defaultButton = new JButton(newNode);
     private JPopupMenu popup = new JPopupMenu();
     private Action runGenetic = new runGeneticAction("Run Genetic");
     private Action runGreedy= new runGreedyAction("Run Greedy");
     private JSpinner randomCounter = new randomCounterAction();
     private JSpinner populationCounter= new populationCounterAction();
+    private final JLabel labelNodes = new JLabel("Nodes:");
+    private final JLabel labelPopulation = new JLabel("Population");
     
 
     public ControlPanel() {
@@ -41,11 +44,15 @@ public class ControlPanel extends JToolBar {
 
         this.add(defaultButton);
         this.add(new JButton(clearAll));
+        
+        add(labelNodes);
         this.add(randomCounter);
         this.add(new JButton(random));
+        
+        add(labelPopulation);
+        this.add(populationCounter);
         this.add(new JButton(runGenetic));
         this.add(new JButton(runGreedy));
-        this.add(populationCounter);
         
         popup.add(new JMenuItem(newNode));
         popup.add(new JMenuItem(connect));

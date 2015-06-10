@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import control.RandomAction;
+import control.GenerateAction;
 
 
 public class GraphIO {

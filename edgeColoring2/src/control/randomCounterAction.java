@@ -14,7 +14,7 @@ public class randomCounterAction extends JSpinner{
 	
 	
 	public randomCounterAction () {
-        super(new SpinnerNumberModel(16, 3, 70, 1)); //currentValue, minValue,   maxValue,  steps
+        super(new SpinnerNumberModel(30, 3, 200, 1)); //currentValue, minValue,   maxValue,  steps
         Vars.randomCounter=(Integer)this.getValue();
         addChangeListener(new ChangeListener() {
 			

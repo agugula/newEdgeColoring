@@ -14,9 +14,9 @@ import view.MainFrame;
 
 public class Vars {
 	
-	// rozmiary okna i wielkosc wierzcho³kow
-	public static final int WIDE = 640;
-    public static final int HIGH = 480;
+	// rozmiary okna i wielkosc wierzcholkow
+	public static final int WIDE = 1024;
+    public static final int HIGH = 768;
     public static final int RADIUS = 5; // promiec Node'a
     public static int radius = RADIUS;
     
@@ -41,7 +41,7 @@ public class Vars {
     public static final Random rnd = new Random();
     
     //algorithm
-    public static Integer population = 10; 		//ustaw jak¹œ domyslna nie wiem ile to ma byc
+    public static Integer population = 10; 		//ustaw jakas domyslna nie wiem ile to ma byc
     public static final Double partToCrossover = 0.7;
     
     
@@ -73,7 +73,7 @@ public class Vars {
     	colors.clear();
 //    	int max=Collections.max(rawColors)+poczatekIteracji;
 //    	LinkedList<Color> colorPalette=new LinkedList<Color>();
-    	// zmiana na HashMap, poniewa¿ kolory nie musz¹ wystêpowaæ od 0 i nie musz¹ byæ kolejno
+    	// zmiana na HashMap, poniewaz kolory nie musza wystepowac od 0 i nie musza byc kolejno
     	HashMap<Integer, Color> colorPalette = new HashMap<Integer, Color>();
     	
     	for (Integer c : rawColors){ //tworzenie nowego losowego zestawy kolorow

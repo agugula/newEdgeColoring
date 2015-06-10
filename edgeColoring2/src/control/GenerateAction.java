@@ -9,9 +9,9 @@ import model.Edge;
 import model.Node;
 import model.Vars;
 
-public class RandomAction extends AbstractAction {
+public class GenerateAction extends AbstractAction {
 
-    public RandomAction(String name) {
+    public GenerateAction(String name) {
         super(name);
     }
 //TODO: przemodelowac na robienie cos na ksztalt grafu

@@ -16,6 +16,7 @@ import model.Node;
 import model.Vars;
 import control.MouseHandler;
 import control.MouseMotionHandler;
+import javax.swing.JLabel;
 
 public class MainFrame extends JComponent {
 
@@ -26,8 +27,8 @@ public class MainFrame extends JComponent {
                 JFrame f = new JFrame("GraphPanel");
                 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 MainFrame gp = new MainFrame();
-                f.add(Vars.control, BorderLayout.NORTH);
-                f.add(new JScrollPane(gp), BorderLayout.CENTER);
+                f.getContentPane().add(Vars.control, BorderLayout.NORTH);
+                f.getContentPane().add(new JScrollPane(gp), BorderLayout.CENTER);
                 f.getRootPane().setDefaultButton(Vars.control.getDefaultButton());
                 f.pack();
                 f.setLocationByPlatform(true);
@@ -39,11 +40,20 @@ public class MainFrame extends JComponent {
         });
     }
 
+    private TimerLabel timerLabel= new TimerLabel();
+    private NodesCounterLabel nodesCounterLabel= new NodesCounterLabel();
+    private EdgesCounterLabel edgesCounterLabel= new EdgesCounterLabel();
+    
+    
     public MainFrame() {
         this.setOpaque(true);
         this.addMouseListener(new MouseHandler());
         this.addMouseMotionListener(new MouseMotionHandler());
         Vars.mainFrame=this;
+        
+        add(nodesCounterLabel);
+        add(edgesCounterLabel);
+        add(timerLabel);
     }
 
     @Override
