@@ -41,7 +41,8 @@ public class Vars {
     public static final Random rnd = new Random();
     
     //algorithm
-    public static Integer population; 		//ustaw jak¹œ domyslna nie wiem ile to ma byc
+    public static Integer population = 10; 		//ustaw jak¹œ domyslna nie wiem ile to ma byc
+    public static final Double partToCrossover = 0.7;
     
     
     //zwraca maksymalny wierzcholek w grafie

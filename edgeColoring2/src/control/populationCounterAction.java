@@ -14,7 +14,7 @@ public class populationCounterAction extends JSpinner{
 	
 	
 	public populationCounterAction () {
-        super(new SpinnerNumberModel(100, 1, 300, 1)); //currentValue, minValue,   maxValue,  steps
+        super(new SpinnerNumberModel(10, 1, 300, 1)); //currentValue, minValue,   maxValue,  steps
         Vars.population=(Integer)this.getValue();
         addChangeListener(new ChangeListener() {
 			

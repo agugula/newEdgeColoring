@@ -1,7 +1,30 @@
 package genetics;
 
-import java.util.List;
+import java.util.LinkedList;
 
-public abstract class GeneticAlgorithm {
-	public abstract List<Integer> run();
+import model.Vars;
+
+public class GeneticAlgorithm {
+	
+	private Selector selector;
+	
+	public GeneticAlgorithm(Selector s) {
+		selector = s;
+	}
+	
+	public LinkedList<Integer> run() {
+		Population firstGeneration = new Population(Vars.population);
+		Population secondGeneration = new Population();
+		int counter = 0;
+		for ( ; counter < Vars.population * Vars.partToCrossover; counter += 2) {
+			Chromosome [] parents = selector.select(firstGeneration);
+			Chromosome newCh = RandomCrossover.crossover(parents);
+			Mutation.mutate(newCh);
+			secondGeneration.addChromosome(newCh);
+		}
+		secondGeneration.calculateFintess();
+		firstGeneration = PopulationSelector.select(firstGeneration, secondGeneration, Vars.population);
+		System.out.println(firstGeneration.getChromosome(0).getFitness());
+		return firstGeneration.getChromosome(0).getGenotype();
+	}
 }

@@ -1,12 +1,13 @@
 package genetics;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 import model.Vars;
 
-public class Chromosome {
+public class Chromosome implements Comparable<Chromosome> {
 	private LinkedList<Integer> genotype;
 	private int length = 0;
 	private int fitness = -1;
@@ -16,11 +17,16 @@ public class Chromosome {
 		genotype = new LinkedList<>();
 	}
 	
+	public Chromosome(LinkedList<Integer> list) {
+		setGenotype(list);
+		calculateFitness();
+	}
+	
 	public boolean setGenotype(List<Integer> gen) {
 		length = gen.size();
 		genotype = new LinkedList<Integer>();
 		genotype.addAll(gen);
-		calculateFitness();
+		//calculateFitness();
 		return true;
 	}
 	
@@ -33,7 +39,7 @@ public class Chromosome {
 	}
 	
 	public String toString() {
-		return genotype.toString();
+		return genotype.toString() + " fitness: " + fitness;
 	}
 	
 	public int getLength() {
@@ -56,9 +62,7 @@ public class Chromosome {
 	public void swapGenes(int pos1, int pos2) {
 		if (pos1 < 0 || pos2 < 0 || pos1 >= genotype.size() || pos2 >= genotype.size())
 			return;
-		Integer gene = genotype.get(pos1);
-		genotype.set(pos1, genotype.get(pos2));
-		genotype.set(pos2, gene);
+		Collections.swap(genotype, pos1, pos2);
 	}
 	
 	public LinkedList<Chromosome> split(int place) {
@@ -96,17 +100,9 @@ public class Chromosome {
 	public static Chromosome addChromosome(Chromosome ch1, Chromosome ch2) {
 		return ch1.addChromosome(ch2);
 	}
-	
-	public static void main(String [] args) {
-		Chromosome c1 = new Chromosome();
-		c1.generateRandomChromosome(10);
-		Chromosome c2 = new Chromosome();
-		c2.generateRandomChromosome(10);
-		Chromosome r = RandomCrossover.crossover(c1, c2);
-		System.out.println(c1);
-		System.out.println(c2);
-		System.out.println(r);
-		r.swapGenes(7, 8);
-		System.out.println(r);
+
+	@Override
+	public int compareTo(Chromosome o) {
+		return Integer.compare(this.fitness, o.fitness);
 	}
 }
