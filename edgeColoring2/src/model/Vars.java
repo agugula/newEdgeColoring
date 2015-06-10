@@ -64,6 +64,8 @@ public class Vars {
     
     
     public static void parseColors (LinkedList<Integer> rawColors){
+    	if (rawColors == null)
+    		return;
 //    	int poczatekIteracji=1; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     	//czy zwracane inty kolorow zaczynaja sie od 0? jezeli nei to zamien na 1 czy cokolwiek od czego zaczyna sie iteracja
     	colors.clear();
