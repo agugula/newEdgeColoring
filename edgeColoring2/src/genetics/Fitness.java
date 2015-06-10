@@ -27,7 +27,7 @@ public class Fitness {
 		LinkedList<Integer> genotype = ch.getGenotype();
 		for (int i = 0; i < genotype.size(); i++) {
 			for (Integer e : Vars.getAdjacentEdgesIndex(i)) {
-				if (e == genotype.get(i)) {
+				if (genotype.get(e) == genotype.get(i)) {
 					badEdges.add(i);
 					break;
 				}
