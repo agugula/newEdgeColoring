@@ -3,9 +3,8 @@ package model;
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.color.ColorSpace;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -63,28 +62,32 @@ public class Vars {
     	return result;
     }
     
+    
     public static void parseColors (LinkedList<Integer> rawColors){
-    	int poczatekIteracji=1; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    	int poczatekIteracji=1; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     	//czy zwracane inty kolorow zaczynaja sie od 0? jezeli nei to zamien na 1 czy cokolwiek od czego zaczyna sie iteracja
     	colors.clear();
-    	int max=Collections.max(rawColors)+poczatekIteracji;
-    	LinkedList<Color> colorPalette=new LinkedList<Color>();
+//    	int max=Collections.max(rawColors)+poczatekIteracji;
+//    	LinkedList<Color> colorPalette=new LinkedList<Color>();
+    	// zmiana na HashMap, poniewa¿ kolory nie musz¹ wystêpowaæ od 0 i nie musz¹ byæ kolejno
+    	HashMap<Integer, Color> colorPalette = new HashMap<Integer, Color>();
     	
-    	for (int i=0;i<max;i++){ //tworzenie nowego losowego zestawy kolorow
-    		colorPalette.add(new Color(rnd.nextFloat(),rnd.nextFloat(),rnd.nextFloat()));
+    	for (Integer c : rawColors){ //tworzenie nowego losowego zestawy kolorow
+    		colorPalette.put(c, new Color(rnd.nextFloat(),rnd.nextFloat(),rnd.nextFloat()));
     	}
     	
     	matchColorsToNodes(rawColors,colorPalette);
     }
     
-    public static void matchColorsToNodes(LinkedList<Integer> rawColors, LinkedList<Color> colorPalette){
+    public static void matchColorsToNodes(LinkedList<Integer> rawColors, HashMap<Integer, Color> colorPalette){
     	if (rawColors.size()!=edges.size())
     		throw new RuntimeException("niezbiezna ilosc elemetow listy");
     	
-    	for (int i=0;i<rawColors.size();i++){
-    		Edge currEdge=edges.get(i);
-    		Color colorForEdge=colorPalette.get(rawColors.get(i));
-    		currEdge.setColor(colorForEdge);
+    	for (int i = 0; i < rawColors.size(); i++) {
+    		edges.get(i).setColor(colorPalette.get(rawColors.get(i)));
+//    		Edge currEdge=edges.get(i);
+//    		Color colorForEdge=colorPalette.get(rawColors.get(i));
+//    		currEdge.setColor(colorForEdge);
     	}
     }
     
