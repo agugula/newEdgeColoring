@@ -17,7 +17,7 @@ public class Vars {
 	// rozmiary okna i wielkosc wierzcho³kow
 	public static final int WIDE = 640;
     public static final int HIGH = 480;
-    public static final int RADIUS = 7;
+    public static final int RADIUS = 5; // promiec Node'a
     public static int radius = RADIUS;
     
     //frame init
@@ -64,8 +64,6 @@ public class Vars {
     
     
     public static void parseColors (LinkedList<Integer> rawColors){
-    	if (rawColors == null)
-    		return;
 //    	int poczatekIteracji=1; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     	//czy zwracane inty kolorow zaczynaja sie od 0? jezeli nei to zamien na 1 czy cokolwiek od czego zaczyna sie iteracja
     	colors.clear();
@@ -75,7 +73,7 @@ public class Vars {
     	HashMap<Integer, Color> colorPalette = new HashMap<Integer, Color>();
     	
     	for (Integer c : rawColors){ //tworzenie nowego losowego zestawy kolorow
-    		colorPalette.put(c, new Color(rnd.nextFloat(),rnd.nextFloat(),rnd.nextFloat()));
+    		colorPalette.put(c, parseIntToColor(c));
     	}
     	
     	matchColorsToNodes(rawColors,colorPalette);
@@ -91,6 +89,42 @@ public class Vars {
 //    		Color colorForEdge=colorPalette.get(rawColors.get(i));
 //    		currEdge.setColor(colorForEdge);
     	}
+    }
+    
+    public static Color parseIntToColor(int src){
+		switch (src){
+		case 0: return Color.yellow;
+		case 1: return Color.RED;
+		case 2: return Color.BLUE;
+		case 3: return Color.GREEN;
+		case 4: return Color.BLACK;
+		case 5: return Color.CYAN;
+		case 6: return Color.GRAY;
+		case 7: return Color.GRAY;
+		case 8: return Color.MAGENTA;
+		case 9: return Color.YELLOW;
+		default: return new Color(Vars.rnd.nextFloat(),Vars.rnd.nextFloat(),Vars.rnd.nextFloat());
+		}
+	}
+    
+    public static int getMaxQuantityOfEdges(){
+    	int result;
+    	int nodesQ=nodes.size();
+    	result=newton(nodesQ,2);
+    	
+    	
+    	return result;
+    }
+    
+    public static int newton( int n, int k ){ //max ilosc krawedzi w grafie to (n po 2) gdzie n to ilosc wierzcholkow
+	    int  result = 1;       
+	    int i;
+	     
+	    for(i = 1; i <= k; i++){
+	    	result *=( n - i + 1 ) / i;      
+	    }
+	     
+	    return result;   
     }
     
 }
