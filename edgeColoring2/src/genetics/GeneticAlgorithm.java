@@ -22,7 +22,9 @@ public class GeneticAlgorithm {
 			Mutation.mutate(newCh);
 			secondGeneration.addChromosome(newCh);
 		}
+		secondGeneration.calculateFintess();
 		firstGeneration = PopulationSelector.select(firstGeneration, secondGeneration, Vars.population);
+		System.out.println(firstGeneration.getChromosome(0).getFitness());
 		return firstGeneration.getChromosome(0).getGenotype();
 	}
 }
