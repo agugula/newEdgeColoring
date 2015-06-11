@@ -4,8 +4,18 @@ import java.util.Arrays;
 
 import model.Vars;
 
+/**
+ * Selektor turniejowy
+ * Wybiera 5 losowych osobników z populacji, po czym do krzyżowania wybiera 2 najlepiej przystosowane
+ * (posiadające najniższą wartość funkcji przystosowania)
+ */
 public class TournamentSelector implements Selector {
 
+	/** 
+	 * Funkcja zwracająca parę chromosomów do późniejszego krzyżowania
+	 * @param p populacja, z której losujemy rodziców
+	 * @return para nowych rodziców
+	 */
 	@Override
 	public Chromosome[] select(Population p) {
 		Chromosome [] result = new Chromosome[2];

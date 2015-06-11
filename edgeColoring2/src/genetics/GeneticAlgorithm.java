@@ -4,14 +4,36 @@ import java.util.LinkedList;
 
 import model.Vars;
 
+/**
+ * Zawiera algorytm genetyczny
+ * Schemat działania:
+ * -wybór populacji początkowej
+ * -wybór rodziców
+ * -krzyżowanie
+ * -mutacja
+ * -ocena nowej populacji
+ * -tworzenie nowej populacji na podstawie nowo stworzonej i starej
+ * -jeśli nowa populacja nie spełnia warunków, powrót do wyboru rodziców
+ */
 public class GeneticAlgorithm {
 	
+	/** Selektor rodziców */
 	private Selector selector;
 	
+	/**
+	 * Utworzenie algorytmu z zadanym selektorem
+	 *
+	 * @param s selektor rodziców
+	 */
 	public GeneticAlgorithm(Selector s) {
 		selector = s;
 	}
 	
+	/**
+	 * Uruchomienie algorytmu
+	 *
+	 * @return lista kolorów dla odpowiadających im krawędzi (indeks koloru równy indeksowi krawędzi w zbiorze krawędzi)
+	 */
 	public LinkedList<Integer> run() {
 		Integer numberOfGenerations = 0;
 		Integer deg = Vars.getMaximumNodeDegree();
@@ -28,10 +50,6 @@ public class GeneticAlgorithm {
 			secondGeneration.calculateFintess();
 			Population newGeneration = PopulationSelector.select(firstGeneration, secondGeneration, Vars.population);
 			firstGeneration = newGeneration;
-			System.out.println(firstGeneration.getChromosome(0).getFitness());
-//			Vars.parseColors(firstGeneration.getChromosome(0).getGenotype());
-//			Vars.mainFrame.repaint();
-//			System.out.println(firstGeneration);
 			bestFitness = firstGeneration.getChromosome(0).getFitness();
 			numberOfGenerations++;
 		}

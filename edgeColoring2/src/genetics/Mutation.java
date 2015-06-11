@@ -4,7 +4,18 @@ import java.util.LinkedList;
 
 import model.Vars;
 
+/**
+ * Mutator
+ * Zmienia losowo geny niewłaściwych krawędzi
+ */
 public class Mutation {
+	
+	/**
+	 * Mutowanie chromosomu
+	 *
+	 * @param ch chromosom do zmutowania
+	 * @return zmutowany chromosom
+	 */
 	public static Chromosome mutate(Chromosome ch) {
 		LinkedList<Integer> badEdges = Fitness.calculateBadEdges(ch);
 		int maxCol = Vars.getMaximumNodeDegree() + 1;
@@ -12,12 +23,6 @@ public class Mutation {
 			return ch;
 		for (int i = 0; i < badEdges.size(); i++)
 			ch.setGene(badEdges.get(i), Vars.rnd.nextInt(maxCol));
-//		Random r = new Random();
-//		int id1 = r.nextInt(badEdges.size());
-//		int id2 = r.nextInt(badEdges.size());
-//		while (id1 == id2)
-//			id2 = r.nextInt(badEdges.size());
-//		ch.swapGenes(badEdges.get(id1), badEdges.get(id2));
 		return ch;
 	}
 }

@@ -3,8 +3,20 @@ package genetics;
 import java.util.Collections;
 import java.util.LinkedList;
 
+/**
+ * Selektor populacji
+ * Ocenia które osobniki zostaną użyte do utworzenia nowej populacji po rozmnożeniu
+ */
 public class PopulationSelector {
 	
+	/**
+	 * Wybiera nowe osobniki
+	 *
+	 * @param p1 stare pokolenie
+	 * @param p2 nowe pokolenie
+	 * @param size oczekiwany rozmiar populacji
+	 * @return nowa populacja
+	 */
 	public static Population select(Population p1, Population p2, int size) {
 		if (size <= 0)
 			return null;

@@ -4,7 +4,26 @@ import java.util.LinkedList;
 
 import model.Vars;
 
+/**
+ * Zawiera funkcję obliczającą wartość przystosowania danego osobnika
+ * wartość funkcji:
+ * F(y) = kol + s(delta + 1 + zle)
+ * gdzie:
+ * F - wartość funkcji
+ * y - chromosom
+ * kol - ilość użytych kolorów
+ * s - parametr określający karę (0, gdy dobrze pokolorowany, 1, gdy zawiera niewłaściwe krawędzie)
+ * delta - najwyższy stopień wierzchołka
+ * zle - ilość źle pokolorowanych krawędzi
+ */
 public class Fitness {
+	
+	/**
+	 * Ocenia danego osobnika
+	 *
+	 * @param ch chromosom do oceny
+	 * @return wartość funkcji przystosowania
+	 */
 	static public int calculateFitness(Chromosome ch) {
 		int result = 0;
 		int numberOfColors = 0;
@@ -22,6 +41,12 @@ public class Fitness {
 		return result;
 	}
 	
+	/**
+	 * Zliczanie źle pokolorowanych krawędzi
+	 *
+	 * @param ch chromosom
+	 * @return indeksy źle pokolorowanych krawędzi
+	 */
 	static public LinkedList<Integer> calculateBadEdges(Chromosome ch) {
 		LinkedList<Integer> badEdges = new LinkedList<>(); 
 		LinkedList<Integer> genotype = ch.getGenotype();

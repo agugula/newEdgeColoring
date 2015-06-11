@@ -5,8 +5,16 @@ import java.util.Random;
 
 import model.Vars;
 
+/**
+ * Algorytm zachłanny kolorujący krawędzie. Wybór kolejnych krawędzi do pokolorowania przeprowadzany jest losowo. 
+ */
 public class RandomGreedyAlgorithm {
 	
+	/**
+	 * Funkcja uruchamia algorytm
+	 *
+	 * @return lista kolorów dla odpowiadających im krawędzi (indeks koloru równy indeksowi krawędzi w zbiorze krawędzi)
+	 */
 	public static LinkedList<Integer> run() {
 		Integer numberOfEdges = Vars.edges.size();
 		if (numberOfEdges <= 0)
