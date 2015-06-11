@@ -16,6 +16,7 @@ import model.Node;
 import model.Vars;
 import control.MouseHandler;
 import control.MouseMotionHandler;
+
 import javax.swing.JLabel;
 
 public class MainFrame extends JComponent {
@@ -89,4 +90,9 @@ public class MainFrame extends JComponent {
 	public EdgesCounterLabel getEdgesCounterLabel() {
 		return edgesCounterLabel;
 	}
+	public void updateLabels(){
+		edgesCounterLabel.setText(String.valueOf("Edges: "+Vars.edges.size()));
+		nodesCounterLabel.setText(String.valueOf("Nodes: "+Vars.nodes.size()));
+	}
+	
 }

@@ -26,7 +26,6 @@ public class ConnectAction extends AbstractAction {
 	                Vars.edges.add(newEdge);
 	                n1.addEdge(newEdge);
 	                n2.addEdge(newEdge);
-	                System.out.println(n1.getEdges());
                 }
             }
         }

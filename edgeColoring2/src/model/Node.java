@@ -185,7 +185,6 @@ public class Node {
     	Integer nodesQuantity=amount;
         Integer centerX=Vars.mainFrame.getWidth()/2; //test
         Integer centerY=Vars.mainFrame.getHeight()/2;//test
-        System.out.println(centerX+"     "+centerY);
         Double graphRadius= (double) ((centerX>centerY) ? (centerY - 50) : (centerX - 50)); 
         
         Double posX,posY;
@@ -204,11 +203,14 @@ public class Node {
     
     public String toString(){
     	String result="";
+    	//System.out.println(edges);
     	for (Edge e:edges){
-    		Node n=(e.getN1()==this) ? e.getN1() : e.getN2();
-    		result+=Vars.nodes.indexOf(e)+" ";
+    		Node n=(e.getN1()==this) ? e.getN2() : e.getN1();
+    		result+=Vars.nodes.indexOf(n)+" ";
     	}
-    	result=result.substring(0,result.length()-1);
+    	//System.out.println("result:");
+    	if (result.length()>0)
+    		result=result.substring(0,result.length()-1); //ucinanie ostatniego nadmiarowego " "
     	return result;
     }
     

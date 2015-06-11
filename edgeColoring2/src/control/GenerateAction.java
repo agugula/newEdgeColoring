@@ -41,6 +41,7 @@ public class GenerateAction extends AbstractAction {
     	        //System.out.println(n1.getEdges());
     	    }
     	}
+    	Vars.mainFrame.getTimerLabel().setText("Timer: ");
     }
     
     private static void handleLabels(){

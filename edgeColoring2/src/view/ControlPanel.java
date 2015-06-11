@@ -19,6 +19,8 @@ import control.randomCounterAction;
 import control.runGeneticAction;
 import control.runGreedyAction;
 import model.NewNodeAction;
+import model.Vars;
+
 import javax.swing.JLabel;
 
 public class ControlPanel extends JToolBar {
@@ -54,7 +56,9 @@ public class ControlPanel extends JToolBar {
         this.add(populationCounter);
         this.add(new JButton(runGenetic));
         this.add(new JButton(runGreedy));
-        this.add(new fileChooserButton());
+        this.add(new FileChooserButton());
+        this.add(new SaveButton());
+        
         
         popup.add(new JMenuItem(newNode));
         popup.add(new JMenuItem(connect));
@@ -89,6 +93,8 @@ public class ControlPanel extends JToolBar {
 	public JPopupMenu getPopup() {
 		return popup;
 	}
+	
+	
     
     
 }
