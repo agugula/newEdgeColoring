@@ -5,8 +5,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
-import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -16,8 +18,6 @@ import model.Node;
 import model.Vars;
 import control.MouseHandler;
 import control.MouseMotionHandler;
-
-import javax.swing.JLabel;
 
 public class MainFrame extends JComponent {
 
@@ -93,6 +93,18 @@ public class MainFrame extends JComponent {
 	public void updateLabels(){
 		edgesCounterLabel.setText(String.valueOf("Edges: "+Vars.edges.size()));
 		nodesCounterLabel.setText(String.valueOf("Nodes: "+Vars.nodes.size()));
+	}
+	
+	public void exportToImage(){
+		BufferedImage bi = new BufferedImage(this.getSize().width, this.getSize().height, BufferedImage.TYPE_INT_ARGB); 
+		Graphics g = bi.createGraphics();
+		this.paint(g);  //this == JComponent
+		g.dispose();
+		try{
+			ImageIO.write(bi,"png",new File("test.png"));
+		}catch (Exception e) {
+			
+		}
 	}
 	
 }

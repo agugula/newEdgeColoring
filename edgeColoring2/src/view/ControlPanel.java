@@ -38,6 +38,7 @@ public class ControlPanel extends JToolBar {
     private JSpinner populationCounter= new populationCounterAction();
     private final JLabel labelNodes = new JLabel("Nodes:");
     private final JLabel labelPopulation = new JLabel("Population");
+    private final JButton exportToPDFButton = new ExportButton();
    // private JButton openFileButton=new fileChooserButton();
     
 
@@ -56,6 +57,8 @@ public class ControlPanel extends JToolBar {
         this.add(populationCounter);
         this.add(new JButton(runGenetic));
         this.add(new JButton(runGreedy));
+        
+        add(exportToPDFButton);
         this.add(new FileChooserButton());
         this.add(new SaveButton());
         
