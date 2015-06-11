@@ -1,7 +1,7 @@
 package control;
 
 import genetics.GeneticAlgorithm;
-import genetics.RandomSelector;
+import genetics.TournamentSelector;
 
 import java.awt.event.ActionEvent;
 import java.util.LinkedList;
@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-import view.MainFrame;
 import model.Vars;
 
 public class runGeneticAction extends AbstractAction implements Action {
@@ -21,7 +20,7 @@ public class runGeneticAction extends AbstractAction implements Action {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		GeneticAlgorithm gen = new GeneticAlgorithm(new RandomSelector());
+		GeneticAlgorithm gen = new GeneticAlgorithm(new TournamentSelector());
 		long start=System.currentTimeMillis();
 		LinkedList<Integer> colors = gen.run();
 		long end=System.currentTimeMillis();
