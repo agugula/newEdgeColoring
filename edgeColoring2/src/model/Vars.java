@@ -133,4 +133,35 @@ public class Vars {
 	    return result;   
     }
     
+    public static void  countUsedColors(){
+    	LinkedList<Color> colors=new LinkedList<Color>();
+    	for (Edge e:edges){
+    		if (!colors.contains((Color)e.getColor()));
+    			colors.add(e.getColor());
+    	}
+    	System.out.println(colors.size());
+    }
+    
+    public static void testAlorithm(){
+    	int errors=0;
+    	for (Node n:nodes){
+    		ArrayList<Color> colors=new ArrayList<Color>();
+    		
+	    	for(Edge e:n.getEdges()){
+	    		if (colors.contains(e.getColor())){
+	    			errors++;
+	    		} else {
+	    			colors.add(e.getColor());
+	    		}
+	    		
+	    	}
+	    		
+    	}
+    	System.out.println("errors: "+errors);
+    	countUsedColors();
+    }
+    
+    
+    
+    
 }

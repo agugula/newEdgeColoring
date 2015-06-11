@@ -7,6 +7,4 @@ public class EdgesCounterLabel extends JLabel {
 		super("Edges: 0");
         this.setBounds(10, 36, 111, 14);
 	}
-	
-	
 }

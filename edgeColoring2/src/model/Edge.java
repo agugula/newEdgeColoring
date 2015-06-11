@@ -50,7 +50,6 @@ public class Edge {
 		if (containsNode(nd.n1) && containsNode(nd.n2)){
 			return true;
 		}
-		
 		return false;
 	}
 	

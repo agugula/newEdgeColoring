@@ -27,6 +27,7 @@ public class runGreedyAction extends AbstractAction implements Action {
 			Vars.mainFrame.getTimerLabel().handleTimer(time);
 			
 			Vars.parseColors(re);
+			Vars.testAlorithm();
 			Vars.mainFrame.repaint();
 		}
 	}
