@@ -76,6 +76,10 @@ public class Chromosome implements Comparable<Chromosome> {
 		return result;
 	}
 	
+	public void setGene(int id, Integer g) {
+		genotype.set(id, g);
+	}
+	
 	public Chromosome firstPart(int place) {
 		if (place < 0 || place > (genotype.size()))
 			return null;
@@ -93,7 +97,8 @@ public class Chromosome implements Comparable<Chromosome> {
 	}
 	
 	public Chromosome addChromosome(Chromosome ch) {
-		this.genotype.addAll(ch.getGenotype());
+		this.genotype.addAll(ch.genotype);
+		this.length += ch.length;
 		return this;
 	}
 	

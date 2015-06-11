@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-import view.MainFrame;
 import model.Vars;
 
 public class runGeneticAction extends AbstractAction implements Action {
