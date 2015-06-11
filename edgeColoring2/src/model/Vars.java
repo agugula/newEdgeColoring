@@ -97,7 +97,7 @@ public class Vars {
     
     public static Color parseIntToColor(int src){
 		switch (src){
-			case 0: return Color.yellow;
+			case 0: return Color.PINK;
 			case 1: return Color.RED;
 			case 2: return Color.BLUE;
 			case 3: return Color.GREEN;
