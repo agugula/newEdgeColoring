@@ -77,6 +77,7 @@ public class MainFrame extends JComponent {
             g.drawRect(Vars.mouseRect.x, Vars.mouseRect.y,
             		Vars.mouseRect.width, Vars.mouseRect.height);
         }
+        updateLabels();
     }
 
 	public TimerLabel getTimerLabel() {

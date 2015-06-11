@@ -24,6 +24,7 @@ public class DeleteAction extends AbstractAction {
                 iter.remove();
             }
         }
+        
         Vars.mainFrame.repaint();
     }
 

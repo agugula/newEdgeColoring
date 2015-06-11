@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 
 public class NodesCounterLabel extends JLabel {
 	public NodesCounterLabel(){
-		super("Nodes: ");
+		super("Nodes: 0");
         this.setBounds(10, 11, 111, 14);
 	}
 	

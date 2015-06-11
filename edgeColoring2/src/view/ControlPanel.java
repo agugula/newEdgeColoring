@@ -14,11 +14,11 @@ import control.ClearAction;
 import control.ConnectAction;
 import control.DeleteAction;
 import control.GenerateAction;
+import control.NewNodeAction;
 import control.populationCounterAction;
 import control.randomCounterAction;
 import control.runGeneticAction;
 import control.runGreedyAction;
-import model.NewNodeAction;
 import model.Vars;
 
 import javax.swing.JLabel;
