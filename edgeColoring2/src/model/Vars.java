@@ -97,18 +97,25 @@ public class Vars {
     
     public static Color parseIntToColor(int src){
 		switch (src){
-		case 0: return Color.yellow;
-		case 1: return Color.RED;
-		case 2: return Color.BLUE;
-		case 3: return Color.GREEN;
-		case 4: return Color.BLACK;
-		case 5: return Color.CYAN;
-		case 6: return Color.GRAY;
-		case 7: return Color.GRAY;
-		case 8: return Color.MAGENTA;
-		case 9: return Color.YELLOW;
-		default: return new Color(Vars.rnd.nextFloat(),Vars.rnd.nextFloat(),Vars.rnd.nextFloat());
+			case 0: return Color.yellow;
+			case 1: return Color.RED;
+			case 2: return Color.BLUE;
+			case 3: return Color.GREEN;
+			case 4: return Color.BLACK;
+			case 5: return Color.CYAN;
+			case 6: return Color.GRAY;
+			case 7: return Color.LIGHT_GRAY;
+			case 8: return Color.MAGENTA;
+			case 9: return Color.YELLOW;
+			default:  {
+				Color c=new Color(Vars.rnd.nextFloat(),Vars.rnd.nextFloat(),Vars.rnd.nextFloat());
+				while (Vars.colors.contains(c))
+					c=new Color(Vars.rnd.nextFloat(),Vars.rnd.nextFloat(),Vars.rnd.nextFloat());
+				colors.add(c);
+				return c;
+			}
 		}
+		
 	}
     
     //zwraca maksymalna ilosc krawedzi ktore moga wystapic dla grafu o zadanej ilosci wierzcholkow
@@ -136,10 +143,10 @@ public class Vars {
     public static void  countUsedColors(){
     	LinkedList<Color> colors=new LinkedList<Color>();
     	for (Edge e:edges){
-    		if (!colors.contains((Color)e.getColor()));
-    			colors.add(e.getColor());
+    		if ( !colors.contains( (Color) e.getColor() ) )
+    			colors.add( e.getColor() );
     	}
-    	System.out.println(colors.size());
+    	System.out.println("used colors: "+colors.size());
     }
     
     public static void testAlorithm(){
@@ -153,9 +160,7 @@ public class Vars {
 	    		} else {
 	    			colors.add(e.getColor());
 	    		}
-	    		
 	    	}
-	    		
     	}
     	System.out.println("errors: "+errors);
     	countUsedColors();

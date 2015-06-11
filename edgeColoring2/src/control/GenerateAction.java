@@ -25,12 +25,12 @@ public class GenerateAction extends AbstractAction {
         Node.addExactAmountOfNodes(Vars.randomCounter);
         generateRandomEdges();
         handleLabels();
+        Vars.mainFrame.getTimerLabel().setText("Timer: ");
         Vars.mainFrame.repaint();
     }
     
     public static void generateRandomEdges(){
     	int edgesQuantity=Vars.rnd.nextInt(Vars.getMaxQuantityOfEdges());
-    	System.out.println(edgesQuantity); 
     	for (int i=0;i<edgesQuantity;i++){
     		Node n1=Vars.nodes.get(i%Vars.nodes.size());
     		Node n2=Vars.nodes.get(Vars.rnd.nextInt(Vars.nodes.size()));
@@ -42,7 +42,7 @@ public class GenerateAction extends AbstractAction {
     	        //System.out.println(n1.getEdges());
     	    }
     	}
-    	Vars.mainFrame.getTimerLabel().setText("Timer: ");
+    	
     }
     
     private static void handleLabels(){

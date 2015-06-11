@@ -44,10 +44,18 @@ public class Edge {
 		this.color = color;
 	}
 	
+	public boolean equalsNoColor(Object o){
+		Edge nd=(Edge) o; //secoND edge
+		if (containsNode(nd.n1) && containsNode(nd.n2)){
+			return true;
+		}
+		return false;
+	}
+	
 	@Override
 	public boolean equals(Object o){ // nie sprawdza czy zgdadza sie kolor a tylko czy czy laczy te same wierzcholki
 		Edge nd=(Edge) o; //secoND edge
-		if (containsNode(nd.n1) && containsNode(nd.n2)){
+		if (containsNode(nd.n1) && containsNode(nd.n2) && color.equals(nd.color)){
 			return true;
 		}
 		return false;
