@@ -23,7 +23,7 @@ public class Edge {
         Point p1 = n1.getLocation();
         Point p2 = n2.getLocation();
         g2d.setColor(color);
-        g2d.setStroke(new BasicStroke(2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        g2d.setStroke(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2d.drawLine(p1.x, p1.y, p2.x, p2.y);
         g2d.setStroke(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND)); //do rysowania obramowek dla zaznaczonych wierzcholkow
     }

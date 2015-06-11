@@ -17,7 +17,7 @@ public class Vars {
 	// rozmiary okna i wielkosc wierzcholkow
 	public static final int WIDE = 1024;
     public static final int HIGH = 768;
-    public static final int RADIUS = 5; // promiec Node'a
+    public static final int RADIUS = 3; // promiec Node'a
     public static int radius = RADIUS;
     
     //frame init

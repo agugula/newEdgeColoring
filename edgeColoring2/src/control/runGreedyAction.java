@@ -20,11 +20,18 @@ public class runGreedyAction extends AbstractAction implements Action {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (Vars.edges.size()>1){
+			long start=System.currentTimeMillis();
 			LinkedList<Integer> re = SequentialGreedyAlgorithm.run();
+			long end=System.currentTimeMillis();
+			long time=(end-start);
+			Vars.mainFrame.getTimerLabel().handleTimer(time);
+			
 			System.out.println(re);
 			Vars.parseColors(re);
 			Vars.mainFrame.repaint();
 		}
 	}
+	
+	
 
 }

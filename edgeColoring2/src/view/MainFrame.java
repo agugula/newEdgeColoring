@@ -77,4 +77,16 @@ public class MainFrame extends JComponent {
             		Vars.mouseRect.width, Vars.mouseRect.height);
         }
     }
+
+	public TimerLabel getTimerLabel() {
+		return timerLabel;
+	}
+
+	public NodesCounterLabel getNodesCounterLabel() {
+		return nodesCounterLabel;
+	}
+
+	public EdgesCounterLabel getEdgesCounterLabel() {
+		return edgesCounterLabel;
+	}
 }

@@ -22,7 +22,11 @@ public class runGeneticAction extends AbstractAction implements Action {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		GeneticAlgorithm gen = new GeneticAlgorithm(new RandomSelector());
+		long start=System.currentTimeMillis();
 		LinkedList<Integer> colors = gen.run();
+		long end=System.currentTimeMillis();
+		long time=(end-start);
+		Vars.mainFrame.getTimerLabel().handleTimer(time);
 		Vars.parseColors(colors);
 		System.out.println(colors);
 		Vars.mainFrame.repaint();

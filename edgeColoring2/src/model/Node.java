@@ -154,16 +154,7 @@ public class Node {
 //        }
 //    }
 
-    /**
-     * Update each node's color.
-     */
-    public static void updateColor(List<Node> list, Color color) {
-        for (Node n : list) {
-            if (n.isSelected()) {
-                //n.color = color;
-            }
-        }
-    }
+    
     
     /**
      * Adds an edge to node's edges list.

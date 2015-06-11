@@ -24,6 +24,7 @@ public class GenerateAction extends AbstractAction {
     
         Node.addExactAmountOfNodes(Vars.randomCounter);
         generateRandomEdges();
+        handleLabels();
         Vars.mainFrame.repaint();
     }
     
@@ -40,6 +41,11 @@ public class GenerateAction extends AbstractAction {
     	        //System.out.println(n1.getEdges());
     	    }
     	}
+    }
+    
+    private static void handleLabels(){
+    	Vars.mainFrame.getNodesCounterLabel().setText("Nodes: "+Vars.nodes.size());
+    	Vars.mainFrame.getEdgesCounterLabel().setText("Edges: "+Vars.edges.size());
     }
     
     
