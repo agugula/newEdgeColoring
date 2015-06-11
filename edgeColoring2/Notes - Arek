@@ -1,19 +1,4 @@
-- Suwaczek z możliwością ręcznego wpisania liczby do ustalenia liczby osobników w populacji
-//jest. ile max bysmy chcieli?
-/// no tego właśnie nie ma, jest liczba określająca ilość wierzchołków, populacja to co innego (część 
-/// algorytmu genetycznego), do tego jest potrzebne drugie takie coś, zakres myślę, że do 300 może być
-/// chociaż nie wiem ile się tego używa w takich normalnych algo gen
-->w Vars jest zmienna population, standardowo ustawiona na 100 zmieniana przez spinner;
-
-- Przydałoby się jakiś stoper, który wyświetla czas od kliknięcia przycisku do zakończenia algorytmu
-(z dokładnością do milisekund) jakoś na tym górnym panelu na przykład
-
-
-
-
-
-
-
+TODO: (przyciski do IO) > (otwieranie nowego okna) > (export do pdf) > (jakiś raport)
 
 
 
@@ -38,3 +23,14 @@ czy algorytm źle działa, czy te kolory są tak podobne, że się nie da rozró
 - Można dorzucić wstawianie randomowych krawędzi, będzie łatwiej i szybciej można testować, przy 
 prezentacji projektu też się przyda
 //DONE
+
+- Przydałoby się jakiś stoper, który wyświetla czas od kliknięcia przycisku do zakończenia algorytmu
+(z dokładnością do milisekund) jakoś na tym górnym panelu na przykład
+->DONE
+
+- Suwaczek z możliwością ręcznego wpisania liczby do ustalenia liczby osobników w populacji
+//jest. ile max bysmy chcieli?
+/// no tego właśnie nie ma, jest liczba określająca ilość wierzchołków, populacja to co innego (część 
+/// algorytmu genetycznego), do tego jest potrzebne drugie takie coś, zakres myślę, że do 300 może być
+/// chociaż nie wiem ile się tego używa w takich normalnych algo gen
+->w Vars jest zmienna population, standardowo ustawiona na 100 zmieniana przez spinner;

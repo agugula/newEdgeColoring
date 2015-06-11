@@ -12,7 +12,9 @@ public class TimerLabel extends JLabel {
 	
 	public void handleTimer(long srcMillis){
 		long seconds=srcMillis/1000;
-		long ms=srcMillis-(seconds*1000);
+		String ms=String.valueOf((srcMillis-(seconds*1000)));
+		while(ms.length()<3) // aby zawsze wyświetlało 3 znaki milisekund a nie 2:3
+			ms="0"+ms;
 		setText("Timer: "+seconds+":"+ms);
 	}
 	
