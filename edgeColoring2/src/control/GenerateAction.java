@@ -30,6 +30,7 @@ public class GenerateAction extends AbstractAction {
     
     public static void generateRandomEdges(){
     	int edgesQuantity=Vars.rnd.nextInt(Vars.getMaxQuantityOfEdges());
+    	System.out.println(edgesQuantity); 
     	for (int i=0;i<edgesQuantity;i++){
     		Node n1=Vars.nodes.get(i%Vars.nodes.size());
     		Node n2=Vars.nodes.get(Vars.rnd.nextInt(Vars.nodes.size()));
