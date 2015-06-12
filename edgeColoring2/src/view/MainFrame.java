@@ -30,12 +30,12 @@ import control.MouseMotionHandler;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class MainFrame.
+ * The Class MainFrame is a JComponent for a graph to be drew..
  */
 public class MainFrame extends JComponent {
 
     /**
-     * The main method.
+     * Creates a mainFrame is a JComponent for a graph to be drew.
      *
      * @param args the arguments
      * @throws Exception the exception
@@ -53,8 +53,8 @@ public class MainFrame extends JComponent {
                 f.pack();
                 f.setLocationByPlatform(true);
                 
-                //test
-               // f.setExtendedState(JFrame.MAXIMIZED_BOTH); //otwiera w fullscreen TODO: odkomentowac przy oddawaniu, teraz bedzie tylko denerwowac
+                
+                f.setExtendedState(JFrame.MAXIMIZED_BOTH); //otwiera w fullscreen TODO: odkomentowac przy oddawaniu, teraz bedzie tylko denerwowac
                 f.setVisible(true);
             }
         });
@@ -79,7 +79,7 @@ public class MainFrame extends JComponent {
     private GenerationsLabel generationsLabel = new GenerationsLabel();
     
     /**
-     * Instantiates a new main frame.
+     * Instantiates a new main frame and adds all labels to it.
      */
     public MainFrame() {
         this.setOpaque(true);
@@ -154,7 +154,7 @@ public class MainFrame extends JComponent {
 	}
 	
 	/**
-	 * Update labels.
+	 * Updates labels with current values.
 	 */
 	public void updateLabels(){
 		edgesCounterLabel.setText(String.valueOf("Edges: "+Vars.edges.size()));
@@ -163,7 +163,7 @@ public class MainFrame extends JComponent {
 	}
 	
 	/**
-	 * Export to image.
+	 * Exports graph to image.
 	 */
 	public void exportToImage(){
 		BufferedImage bi = new BufferedImage(this.getSize().width, this.getSize().height, BufferedImage.TYPE_INT_ARGB); 
