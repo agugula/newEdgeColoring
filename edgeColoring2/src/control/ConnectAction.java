@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package control;
 
 import java.awt.event.ActionEvent;
@@ -8,12 +15,23 @@ import model.Edge;
 import model.Node;
 import model.Vars;
 
+/**
+ * The Class ConnectAction.
+ * Action for connect mouse 
+ */
 public class ConnectAction extends AbstractAction {
 
+    /**
+     * Instantiates a new connect action.
+     * @param name the name
+     */
     public ConnectAction(String name) {
         super(name);
     }
 
+    /** 
+     *  Action created edges between selected nodes and repaints MainFrame
+     */
     public void actionPerformed(ActionEvent e) {
         Node.getSelected(Vars.nodes, Vars.selected);
         if (Vars.selected.size() > 1) {

@@ -3,6 +3,7 @@
  * Edge coloring @ Operations research 2015
  * Arkadiusz Guguła
  * Adam Dzwonnik
+ * Marcel Ghayyeda
  */
 package view;
 
@@ -10,9 +11,8 @@ import java.util.Date;
 
 import javax.swing.JLabel;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class TimerLabel.
+ * Label for timer.
  */
 public class TimerLabel extends JLabel {
 	
@@ -25,7 +25,7 @@ public class TimerLabel extends JLabel {
 	}
 	
 	/**
-	 * Handle timer.
+	 * Handles timer converting given millis to ss:SSS.
 	 *
 	 * @param srcMillis the src millis
 	 */

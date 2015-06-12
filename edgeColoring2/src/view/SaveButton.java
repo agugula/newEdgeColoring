@@ -3,6 +3,7 @@
  * Edge coloring @ Operations research 2015
  * Arkadiusz Guguła
  * Adam Dzwonnik
+ * Marcel Ghayyeda
  */
 package view;
 
@@ -19,7 +20,6 @@ import javax.swing.JOptionPane;
 import model.GraphIO;
 import model.Vars;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class SaveButton.
  */

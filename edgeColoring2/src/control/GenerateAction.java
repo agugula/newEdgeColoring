@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package control;
 
 import java.awt.Point;
@@ -9,15 +16,24 @@ import model.Edge;
 import model.Node;
 import model.Vars;
 
+/**
+ * The Class GenerateAction - class responsible for handling "Generate" button in GUI
+ */
 public class GenerateAction extends AbstractAction {
 
+    /**
+     * Instantiates a new generate action.
+     *
+     * @param name the name
+     */
     public GenerateAction(String name) {
         super(name);
     }
-//TODO: przemodelowac na robienie cos na ksztalt grafu
-    public void actionPerformed(ActionEvent e) {
-    	
-    	//czyszczenie tablicy
+
+/**
+ * 	Clears MainFrame, then generates random amount of nodes and edges. Repaints MainFrame afterwards.
+ */
+public void actionPerformed(ActionEvent e) {
     	Vars.nodes.clear();
         Vars.edges.clear();
         Vars.mainFrame.repaint();
@@ -29,6 +45,9 @@ public class GenerateAction extends AbstractAction {
         Vars.mainFrame.repaint();
     }
     
+    /**
+     * Generates random quantity of edges connecting random nodes.
+     */
     public static void generateRandomEdges(){
     	int edgesQuantity=Vars.rnd.nextInt(Vars.getMaxQuantityOfEdges());
     	for (int i=0;i<edgesQuantity;i++){
@@ -45,31 +64,12 @@ public class GenerateAction extends AbstractAction {
     	
     }
     
+    /**
+     * Changes values of nodes, edges, and algorithm labels in MainFrame
+     */
     private static void handleLabels(){
     	Vars.mainFrame.getNodesCounterLabel().setText("Nodes: "+Vars.nodes.size());
     	Vars.mainFrame.getEdgesCounterLabel().setText("Edges: "+Vars.edges.size());
     	Vars.mainFrame.getGenerationsLabel().setText("Generations: ");
-    }
-    
-    
-    
-    
-//    
-//    public static Node 
-    
-//    Node n1 = Vars.selected.get(i);
-//    Node n2 = Vars.selected.get(i + 1);
-//    Edge newEdge = new Edge(n1, n2, Vars.color);
-//    if (!Vars.edges.contains(newEdge)){
-//        Vars.edges.add(newEdge);
-//        n1.addEdge(newEdge);
-//        n2.addEdge(newEdge);
-//        System.out.println(n1.getEdges());
-//    }
-    
-    
-    
-    
-    
-    
+    } 
 }

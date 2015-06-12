@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package model;
 
 import java.awt.Color;
@@ -7,18 +14,33 @@ import java.awt.Rectangle;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The Class Node is logical representation of an node in graph.
+ */
 public class Node {
 
+    /** The Poing in MainGraph where node is represented */
     private Point p;
+    
+    /** The radius of rectangle created when selecting node */
     private int r;
+    
+    /** The selected checker. */
     private boolean selected = false;
+    
+    /** Variable used to handle graphical selecting nodes in MainFrame */
     private Rectangle b = new Rectangle();
+    
+    /** The edges connected to node. */
     private LinkedList<Edge> edges=new LinkedList<Edge>();
     
 
 	/**
-     * Construct a new node.
-     */
+	 * Construct a new node.
+	 *
+	 * @param p the point
+	 * @param r the radius
+	 */
     public Node(Point p, int r) {
         this.p = p;
         this.r = r;
@@ -27,6 +49,8 @@ public class Node {
 
     /**
      * Calculate this node's rectangular boundary.
+     *
+     * @param b the new boundary
      */
     private void setBoundary(Rectangle b) {
         b.setBounds(p.x - r, p.y - r, 2 * r, 2 * r);
@@ -34,6 +58,8 @@ public class Node {
 
     /**
      * Draw this node.
+     *
+     * @param g the g
      */
     public void draw(Graphics g) {
         g.setColor(Color.BLACK);
@@ -46,6 +72,8 @@ public class Node {
 
     /**
      * Return this node's location.
+     *
+     * @return the location
      */
     public Point getLocation() {
         return p;
@@ -53,6 +81,9 @@ public class Node {
 
     /**
      * Return true if this node contains p.
+     *
+     * @param p the p
+     * @return true, if successful
      */
     public boolean contains(Point p) {
         return b.contains(p);
@@ -60,6 +91,8 @@ public class Node {
 
     /**
      * Return true if this node is selected.
+     *
+     * @return true, if is selected
      */
     public boolean isSelected() {
         return selected;
@@ -67,6 +100,8 @@ public class Node {
 
     /**
      * Mark this node as selected.
+     *
+     * @param selected the new selected
      */
     public void setSelected(boolean selected) {
         this.selected = selected;
@@ -74,6 +109,10 @@ public class Node {
 
     /**
      * Collected all the selected nodes in list.
+     *
+     * @param list the list
+     * @param selected the selected
+     * @return the selected
      */
     public static void getSelected(List<Node> list, List<Node> selected) {
         selected.clear();
@@ -85,7 +124,9 @@ public class Node {
     }
 
     /**
-     * Select no nodes.
+     * Unselect all nodes.
+     *
+     * @param list the list
      */
     public static void selectNone(List<Node> list) {
         for (Node n : list) {
@@ -95,6 +136,10 @@ public class Node {
 
     /**
      * Select a single node; return true if not already selected.
+     *
+     * @param list the list
+     * @param p the p
+     * @return true, if successful
      */
     public static boolean selectOne(List<Node> list, Point p) {
         for (Node n : list) {
@@ -110,7 +155,10 @@ public class Node {
     }
 
     /**
-     * Select each node in r.
+     * Select each node in Rectangle r.
+     *
+     * @param list the list
+     * @param r the r
      */
     public static void selectRect(List<Node> list, Rectangle r) {
         for (Node n : list) {
@@ -120,6 +168,9 @@ public class Node {
 
     /**
      * Toggle selected state of each node containing p.
+     *
+     * @param list the list
+     * @param p the p
      */
     public static void selectToggle(List<Node> list, Point p) {
         for (Node n : list) {
@@ -131,6 +182,9 @@ public class Node {
 
     /**
      * Update each node's position by d (delta).
+     *
+     * @param list the list
+     * @param d the d
      */
     public static void updatePosition(List<Node> list, Point d) {
         for (Node n : list) {
@@ -141,29 +195,20 @@ public class Node {
             }
         }
     }
-
-//    /**
-//     * Update each node's radius r.
-//     */
-//    public static void updateRadius(List<Node> list, int r) {
-//        for (Node n : list) {
-//            if (n.isSelected()) {
-//                n.r = r;
-//                n.setBoundary(n.b);
-//            }
-//        }
-//    }
-
     
-    
-    /**
-     * Adds an edge to node's edges list.
-     */
+ /**
+ * Adds an edge to node's edges list.
+ *
+ * @param edge the edge
+ */
     public void addEdge(Edge edge){
     	edges.add(edge);
     }
+    
     /**
      * Removes an edge from node's edges list.
+     *
+     * @param edge the edge
      */
     public void removeEdge(Edge edge){
     	edges.remove(edge);
@@ -171,15 +216,27 @@ public class Node {
     
     /**
      * Gets node's edges list.
+     *
+     * @return the edges
      */
     public LinkedList<Edge> getEdges() {
 		return edges;
 	}
     
+    /**
+     * Gets the degree.
+     *
+     * @return the degree
+     */
     public int getDegree(){ //stopien wierzcholka
     	return edges.size();
     }
     
+    /**
+     * Adds the exact amount of nodes do graph.
+     *
+     * @param amount the amount
+     */
     public static void addExactAmountOfNodes(int amount){
         
     	Integer nodesQuantity=amount;
@@ -201,14 +258,15 @@ public class Node {
         }
     }
     
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     public String toString(){
     	String result="";
-    	//System.out.println(edges);
     	for (Edge e:edges){
     		Node n=(e.getN1()==this) ? e.getN2() : e.getN1();
     		result+=Vars.nodes.indexOf(n)+" ";
     	}
-    	//System.out.println("result:");
     	if (result.length()>0)
     		result=result.substring(0,result.length()-1); //ucinanie ostatniego nadmiarowego " "
     	return result;

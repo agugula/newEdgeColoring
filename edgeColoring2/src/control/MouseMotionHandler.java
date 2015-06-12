@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package control;
 
 import java.awt.Point;
@@ -7,10 +14,17 @@ import java.awt.event.MouseMotionAdapter;
 import model.Node;
 import model.Vars;
 
+/**
+ * The Class MouseMotionHandler.
+ */
 public class MouseMotionHandler extends MouseMotionAdapter {
 
+    /** The delta. */
     Point delta = new Point();
 
+    /* 
+     * Selects all nodes in rectangle made by pressed pointer.
+     */
     @Override
     public void mouseDragged(MouseEvent e) {
         if (Vars.selecting) {

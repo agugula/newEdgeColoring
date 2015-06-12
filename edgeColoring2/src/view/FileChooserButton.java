@@ -3,6 +3,7 @@
  * Edge coloring @ Operations research 2015
  * Arkadiusz Guguła
  * Adam Dzwonnik
+ * Marcel Ghayyeda
  */
 package view;
 

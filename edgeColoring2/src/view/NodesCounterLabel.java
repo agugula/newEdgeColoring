@@ -3,14 +3,14 @@
  * Edge coloring @ Operations research 2015
  * Arkadiusz Guguła
  * Adam Dzwonnik
+ * Marcel Ghayyeda
  */
 package view;
 
 import javax.swing.JLabel;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class NodesCounterLabel.
+ * Label for nodes counter.
  */
 public class NodesCounterLabel extends JLabel {
 	

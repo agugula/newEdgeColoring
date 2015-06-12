@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package control;
 
 import genetics.SequentialGreedyAlgorithm;
@@ -10,12 +17,23 @@ import javax.swing.Action;
 
 import model.Vars;
 
+/**
+ * The Class runGreedyAction.
+ */
 public class runGreedyAction extends AbstractAction implements Action {
 
+	/**
+	 * Instantiates a new run greedy action.
+	 *
+	 * @param name the name
+	 */
 	public runGreedyAction (String name) {
         super(name);
     }
 	
+	/**
+	 * Starts greedy algorithm if there are any edges in MainFrame.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

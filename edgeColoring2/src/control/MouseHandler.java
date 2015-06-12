@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package control;
 
 import java.awt.event.MouseAdapter;
@@ -6,10 +13,17 @@ import java.awt.event.MouseEvent;
 import model.Node;
 import model.Vars;
 
+/**
+ * The Class MouseHandler.
+ */
 public class MouseHandler extends MouseAdapter {
 
+	/** The vars. */
 	Vars vars=new Vars();
 	
+    /* 
+     * Shows popup menu when triggered.
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         vars.selecting = false;
@@ -20,6 +34,9 @@ public class MouseHandler extends MouseAdapter {
         e.getComponent().repaint();
     }
 
+    /* 
+     * Handles selecting nodes with mouse.
+     */
     @Override
     public void mousePressed(MouseEvent e) {
     	Vars.mousePt = e.getPoint();
@@ -37,6 +54,11 @@ public class MouseHandler extends MouseAdapter {
         e.getComponent().repaint();
     }
 
+    /**
+     * Shows popup.
+     *
+     * @param e the e
+     */
     private void showPopup(MouseEvent e) {
     	Vars.control.getPopup().show(e.getComponent(), e.getX(), e.getY());
     }

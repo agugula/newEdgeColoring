@@ -3,6 +3,7 @@
  * Edge coloring @ Operations research 2015
  * Arkadiusz Guguła
  * Adam Dzwonnik
+ * Marcel Ghayyeda
  */
 package view;
 
@@ -68,10 +69,13 @@ public class MainFrame extends JComponent {
     /** The edges counter label. */
     private EdgesCounterLabel edgesCounterLabel= new EdgesCounterLabel();
     
+    /** The algorithm label. */
     private AlgorithmLabel algorithmLabel = new AlgorithmLabel();
     
+    /** The used colors label. */
     private UsedColorsLabel usedColorsLabel = new UsedColorsLabel();
     
+    /** The generations label. */
     private GenerationsLabel generationsLabel = new GenerationsLabel();
     
     /**
@@ -178,10 +182,20 @@ public class MainFrame extends JComponent {
 		}
 	}
 
+	/**
+	 * Gets the algorithm label.
+	 *
+	 * @return the algorithm label
+	 */
 	public AlgorithmLabel getAlgorithmLabel() {
 		return algorithmLabel;
 	}
 
+	/**
+	 * Gets the generations label.
+	 *
+	 * @return the generations label
+	 */
 	public GenerationsLabel getGenerationsLabel() {
 		return generationsLabel;
 	}

@@ -1,3 +1,10 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ * Marcel Ghayyeda
+ */
 package control;
 
 import genetics.GeneticAlgorithm;
@@ -11,13 +18,20 @@ import javax.swing.Action;
 
 import model.Vars;
 
+/**
+ * The Class runGeneticAction handles "runGenetinc" button.
+ */
 public class runGeneticAction extends AbstractAction implements Action {
+
 
 	public runGeneticAction (String name) {
         super(name);
     }
 	
 	
+	/**
+	 * Starts genetic algorithm if there are any nodes in MainFrame.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Vars.nodes.size()>0){
