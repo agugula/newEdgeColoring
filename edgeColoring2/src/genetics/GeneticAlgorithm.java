@@ -54,6 +54,7 @@ public class GeneticAlgorithm {
 			numberOfGenerations++;
 		}
 		System.out.println("Powstało " + numberOfGenerations + " nowych pokoleń");
+		Vars.mainFrame.getGenerationsLabel().update(numberOfGenerations);
 		return firstGeneration.getChromosome(0).getGenotype();
 	}
 }

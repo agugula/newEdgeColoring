@@ -1,3 +1,9 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ */
 package view;
 
 import java.awt.Color;
@@ -13,7 +19,15 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import model.GraphIO;
 import model.Vars;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class OpenFileChooser.
+ */
 public class OpenFileChooser extends JFileChooser {
+	
+	/**
+	 * Instantiates a new open file chooser.
+	 */
 	public OpenFileChooser(){
 		super("graphs");
 		
@@ -40,6 +54,7 @@ public class OpenFileChooser extends JFileChooser {
 					Vars.mainFrame.repaint(); 
 					JOptionPane.showMessageDialog(Vars.mainFrame, "Graph loaded: " + file.getAbsolutePath(), "EdgeColoring", JOptionPane.INFORMATION_MESSAGE);
 				} catch (IOException e) {
+					e.printStackTrace();
 					JOptionPane.showMessageDialog(Vars.mainFrame, "Loading failed!", "EdgeColoring", JOptionPane.ERROR_MESSAGE);
 				}finally{
 					remove(this);

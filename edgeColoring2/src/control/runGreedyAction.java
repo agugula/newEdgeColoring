@@ -28,6 +28,9 @@ public class runGreedyAction extends AbstractAction implements Action {
 			
 			Vars.parseColors(re);
 			Vars.testAlorithm();
+			Vars.mainFrame.getAlgorithmLabel().setText("Algorithm: Greedy");
+			Vars.mainFrame.getGenerationsLabel().setText("Generations: ");
+
 			Vars.mainFrame.repaint();
 		}
 	}

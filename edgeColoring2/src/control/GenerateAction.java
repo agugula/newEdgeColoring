@@ -48,6 +48,7 @@ public class GenerateAction extends AbstractAction {
     private static void handleLabels(){
     	Vars.mainFrame.getNodesCounterLabel().setText("Nodes: "+Vars.nodes.size());
     	Vars.mainFrame.getEdgesCounterLabel().setText("Edges: "+Vars.edges.size());
+    	Vars.mainFrame.getGenerationsLabel().setText("Generations: ");
     }
     
     

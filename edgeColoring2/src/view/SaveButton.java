@@ -1,3 +1,9 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ */
 package view;
 
 import java.awt.SystemColor;
@@ -13,8 +19,15 @@ import javax.swing.JOptionPane;
 import model.GraphIO;
 import model.Vars;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SaveButton.
+ */
 public class SaveButton extends JButton {
 
+	/**
+	 * Instantiates a new save button.
+	 */
 	public SaveButton(){
 		super();
 		

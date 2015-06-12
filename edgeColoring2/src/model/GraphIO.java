@@ -5,10 +5,21 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.LinkedList;
+
+import javax.swing.JComponent;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.codec.PngImage;
 
 
 public class GraphIO {
@@ -75,4 +86,47 @@ public class GraphIO {
 		
 		}
 	}
+
+	public static void pngToPDF(long time, JComponent mFrame) throws DocumentException, MalformedURLException, IOException {
+//		Document document = new Document(PageSize.A4, 20, 20, 20, 20);
+//		PdfWriter.getInstance(document, new FileOutputStream("./export/"+time+".pdf"));
+//		System.out.println("1");
+//		document.open();
+//		System.out.println("2");
+//		String path="/export/"+time+".png";
+//		Image image = Image.getInstance(mFrame.getClass().getResource(path));
+//		System.out.println("3");
+//		document.add(image);
+//		document.close();
+		
+	    //Create Document Object
+	    Document convertPngToPdf=new Document();
+	    //Create PdfWriter for Document to hold physical file
+	    //Change the PDF file path to suit to your needs
+	    PdfWriter.getInstance(convertPngToPdf, new FileOutputStream("." + File.separator + "exportPDF" + File.separator + time + ".pdf"));
+	    convertPngToPdf.open();
+	    //Get the PNG image to Convert to PDF
+	    //getImage of PngImage class is a static method
+	    //Edit the file location to suit to your needs
+	    Image convertBmp=PngImage.getImage("exportPNG" + File.separator  + time + ".png");
+
+	    float scaler = ((convertPngToPdf.getPageSize().getWidth() - convertPngToPdf.leftMargin()
+	                   - convertPngToPdf.rightMargin() ) / convertBmp.getWidth()) * 100;
+
+	    convertBmp.scalePercent(scaler);
+	    //Add image to Document
+	    convertPngToPdf.add(convertBmp);
+	    //Close Document
+	    convertPngToPdf.close();
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
 }

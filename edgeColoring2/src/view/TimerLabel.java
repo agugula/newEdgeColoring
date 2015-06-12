@@ -1,15 +1,34 @@
+/*
+ * Kolorowanie krawędziowe grafu @ Badania Operacyjne 2015
+ * Edge coloring @ Operations research 2015
+ * Arkadiusz Guguła
+ * Adam Dzwonnik
+ */
 package view;
 
 import java.util.Date;
 
 import javax.swing.JLabel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TimerLabel.
+ */
 public class TimerLabel extends JLabel {
+	
+	/**
+	 * Instantiates a new timer label.
+	 */
 	public TimerLabel(){
 		super("Timer: ");
-        this.setBounds(10, 61, 111, 14);
+        this.setBounds(10, 86, 111, 14);
 	}
 	
+	/**
+	 * Handle timer.
+	 *
+	 * @param srcMillis the src millis
+	 */
 	public void handleTimer(long srcMillis){
 		long seconds=srcMillis/1000;
 		String ms=String.valueOf((srcMillis-(seconds*1000)));

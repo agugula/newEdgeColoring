@@ -29,6 +29,8 @@ public class runGeneticAction extends AbstractAction implements Action {
 			Vars.mainFrame.getTimerLabel().handleTimer(time);
 			Vars.parseColors(colors);
 			Vars.testAlorithm();
+			Vars.mainFrame.getAlgorithmLabel().setText("Algorithm: Generic");
+			
 			Vars.mainFrame.repaint();
 		}
 	}
